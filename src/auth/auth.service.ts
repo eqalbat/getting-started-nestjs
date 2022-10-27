@@ -23,6 +23,7 @@ export class AuthService {
       });
 
       // return the saved user
+      delete user.hash;
       return user;
     } catch (error) {
       if (
