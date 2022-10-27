@@ -27,6 +27,8 @@ export class AuthService {
           hash,
         },
       });
+
+      return this.signToken(user.id, user.email);
     } catch (error) {
       if (
         error instanceof
@@ -68,9 +70,6 @@ export class AuthService {
       );
 
     return this.signToken(user.id, user.email);
-
-    // send bkck the user
-    return { msg: 'i have signed in' };
   }
 
   async signToken(
